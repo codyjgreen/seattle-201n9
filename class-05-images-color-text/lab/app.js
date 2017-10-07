@@ -11,7 +11,7 @@ Test this function by hand in the console to get it working, and when you think 
 For TODO item, be sure to change it to say DONE when you have successfully completed the task*/
 
 // TODO: Write your code here
-function sum(a,b){ //eslint-disable-line
+function sum(a,b){
   var theSum = a + b;
   var message = 'The sum of ' + a + ' and ' + b + ' is ' + theSum + '.';
   return [theSum, message];
@@ -54,15 +54,14 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // TODO: Write your code here
-function sumAndMultiply(a,b,c){ //eslint-disable-line
-  var sum = sum(a,b);
-  var sum2 = sum(sum[0],c);
-  var multiply = multiply(a,b);
-  var multiply2 = multiply(multiply[0],c);
-  var message = 'The sum of ' + a + b + c + 'is ' + theSum + '.';
-  var message2 = 'The product of ' + a + b + c + 'is ' + theProduct + '.';
-  return [theSum,theProduct,message,message2];
-
+function sumAndMultiply(a,b,c){
+  var sum1 = sum(a,b);
+  var sum2 = sum(sum1[0],c);
+  var multiply1 = multiply(a,b);
+  var multiply2 = multiply(multiply1[0],c);
+  var message1 = a + ' and ' + b + ' and ' + c + ' sum to ' + sum2[0] + '.';
+  var message2 = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + multiply2[0] + '.';
+  return [sum2, multiply2, message1, message2];
 }
 
 // TODO: Here is the test for sumAndMultiply(); uncomment it to run it
