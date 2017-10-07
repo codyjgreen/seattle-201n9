@@ -14,6 +14,7 @@ For TODO item, be sure to change it to say DONE when you have successfully compl
 function sum(a,b){
   var theSum = a + b;
   var message = 'The sum of ' + a + ' and ' + b + ' is ' + theSum + '.';
+  document.getElementById('sum').innerHTML = message;
   return [theSum, message];
 }
 
@@ -34,6 +35,7 @@ Test this function by hand in the console to get it working, and when you think 
 function multiply(a,b){ //eslint-disable-line
   var theProduct = a * b;
   var message = 'The product of ' + a + ' and ' + b + ' is ' + theProduct + '.';
+  document.getElementById('multiply').innerHTML = message;
   return [theProduct, message];
 }
 
@@ -61,6 +63,8 @@ function sumAndMultiply(a,b,c){
   var multiply2 = multiply(multiply1[0],c);
   var message1 = a + ' and ' + b + ' and ' + c + ' sum to ' + sum2[0] + '.';
   var message2 = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + multiply2[0] + '.';
+  document.getElementById('sum2').innerHTML = message1;
+  document.getElementById('multiply2').innerHTML = message2;
   return [sum2, multiply2, message1, message2];
 }
 
@@ -89,6 +93,7 @@ function sumArray(testArray){ //eslint-disable-line
   var sum3 = sum(a,b);
   var sum4 = sum(sum3[0],c);
   var message3 = testArray + ' was passed in as an array of numbers, and ' + sum4[0] + ' is their sum.';
+  document.getElementById('sumArray').innerHTML = message3;
   return [sum4, message3];
 }
 
@@ -114,11 +119,11 @@ function multiplyArray(testArray){ //eslint-disable-line
   var a = multiplyRay[0];
   var b = multiplyRay[1];
   var c = multiplyRay[2];
-
   var times = multiply(a,b);
   var times2 = multiply(times[0],c);
-  var message = 'The numbers ' + multiplyRay + ' have a product of ' + times2[0] + '.';
-  return [times2, message];
+  var message4 = 'The numbers ' + multiplyRay + ' have a product of ' + times2[0] + '.';
+  document.getElementById('multiplyArray').innerHTML = message4;
+  return [times2, message4];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
