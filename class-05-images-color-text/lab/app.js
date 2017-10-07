@@ -11,9 +11,10 @@ Test this function by hand in the console to get it working, and when you think 
 For TODO item, be sure to change it to say DONE when you have successfully completed the task*/
 
 // TODO: Write your code here
-function sum(a,b){ //eslint-disable-line
+function sum(a,b){
   var theSum = a + b;
   var message = 'The sum of ' + a + ' and ' + b + ' is ' + theSum + '.';
+  document.getElementById('sum').innerHTML = message;
   return [theSum, message];
 }
 
@@ -34,6 +35,7 @@ Test this function by hand in the console to get it working, and when you think 
 function multiply(a,b){ //eslint-disable-line
   var theProduct = a * b;
   var message = 'The product of ' + a + ' and ' + b + ' is ' + theProduct + '.';
+  document.getElementById('multiply').innerHTML = message;
   return [theProduct, message];
 }
 
@@ -54,15 +56,16 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // TODO: Write your code here
-function sumAndMultiply(a,b,c){ //eslint-disable-line
-  var sum = sum(a,b);
-  var sum2 = sum(sum[0],c);
-  var multiply = multiply(a,b);
-  var multiply2 = multiply(multiply[0],c);
-  var message = 'The sum of ' + a + b + c + 'is ' + sum + '.';
-  var message2 = 'The product of ' + a + b + c + 'is ' + product + '.';
-  return [theSum,theProduct,message,message2];
-
+function sumAndMultiply(a,b,c){
+  var sum1 = sum(a,b);
+  var sum2 = sum(sum1[0],c);
+  var multiply1 = multiply(a,b);
+  var multiply2 = multiply(multiply1[0],c);
+  var message1 = a + ' and ' + b + ' and ' + c + ' sum to ' + sum2[0] + '.';
+  var message2 = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + multiply2[0] + '.';
+  document.getElementById('sum2').innerHTML = message1;
+  document.getElementById('multiply2').innerHTML = message2;
+  return [sum2, multiply2, message1, message2];
 }
 
 // TODO: Here is the test for sumAndMultiply(); uncomment it to run it
@@ -84,11 +87,18 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2,3,4]; //eslint-disable-line
 
 function sumArray(testArray){ //eslint-disable-line
-
+  var a = testArray[0];
+  var b = testArray[1];
+  var c = testArray[2];
+  var sum3 = sum(a,b);
+  var sum4 = sum(sum3[0],c);
+  var message3 = testArray + ' was passed in as an array of numbers, and ' + sum4[0] + ' is their sum.';
+  document.getElementById('sumArray').innerHTML = message3;
+  return [sum4, message3];
 }
 
 // TODO: Here is the test for sumArray(); uncomment it to run it
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -103,11 +113,20 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
-function multiplyArray(testArray){ //eslint-disable-line
+var multiplyRay = [2,3,4];
 
+function multiplyArray(testArray){ //eslint-disable-line
+  var a = multiplyRay[0];
+  var b = multiplyRay[1];
+  var c = multiplyRay[2];
+  var times = multiply(a,b);
+  var times2 = multiply(times[0],c);
+  var message4 = 'The numbers ' + multiplyRay + ' have a product of ' + times2[0] + '.';
+  document.getElementById('multiplyArray').innerHTML = message4;
+  return [times2, message4];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
