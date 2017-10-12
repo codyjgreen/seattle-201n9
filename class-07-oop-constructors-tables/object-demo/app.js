@@ -12,7 +12,7 @@ var firstAndPike = {
   randCustByHour: [],
   cookiesSoldByHour: [],
   totalCookies: 0,
-//method for random customers by hour
+  //method for random customers by hour
   calcRandCustByHour: function() {
     for(var i = 0; i < hours.length; i++) {
       this.randCustByHour.push(Math.floor(Math.random() * (this.maxCustPerHour - this.minCustPerHour + 1)) + this.minCustPerHour);
@@ -20,7 +20,7 @@ var firstAndPike = {
 
     }
   },
-//method for cookies sold by hours
+  //method for cookies sold by hours
   calcCookiesSoldByHour: function() {
     for(var j = 0; j < hours.length; j++) {
       this.cookiesSoldByHour.push(Math.round(this.avgCookieSoldPerHour * this.randCustByHour[j]));
